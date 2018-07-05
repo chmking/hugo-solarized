@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ .Site.Title }}{{ with .Params.Title }} | {{ . }} {{ end }}</title>
+    {{ .Hugo.Generator }}
+
+    {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+    <meta name="robots" content="index,follow">
+    {{ else }}
+    <meta name="robots" CONTENT="noindex,nofollow">
+    {{ end }}
+
+    <link href={{ "css/main.css" | relURL }} rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Lora|Roboto+Mono|Roboto" rel="stylesheet"> 
+      
+    {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+      {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    <main role="main">
+    {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+  <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
+</html>

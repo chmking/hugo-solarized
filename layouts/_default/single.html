@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+<div class="wrapper-center">
+  <div class="wrapper-content">
+    <main role="main">
+      <article>
+        <header>
+          <h1>{{ .Title }}</h1>
+          <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+          <hr>
+        </header>
+        <section>
+        {{ .Content | replaceRE "<p>" "<p class=\"hippie\">" | safeHTML }}
+        </section>
+      </article>
+    </main>
+  </div>
+</div>
+
+{{ end }}

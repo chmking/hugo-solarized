@@ -1,0 +1,296 @@
+@import 'partials/normalize'; 
+
+$color-base-3:  rgb(253, 247, 231); // Lightest
+$color-base-2:  rgb(240, 235, 218);
+$color-base-1:  rgb(157, 171, 171); // Lightest Grey
+$color-base-0:  rgb(142, 158, 160);
+$color-base-00: rgb(112, 134, 142);
+$color-base-01: rgb( 99, 121, 128); // Darkest Grey
+$color-base-02: rgb(  3,  62,  75);
+$color-base-03: rgb(  0,  49,  62); // Darkest
+
+$color-blue:   rgb( 43, 115, 216);
+$color-orange: rgb(209,  85,  22);
+
+$color-theme-background-light: $color-base-3;
+$color-theme-background-dark: $color-base-2;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-row-item {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    position: relative;
+    width: 100%; 
+}
+
+p.summary {
+    max-height: 6em;
+    overflow-y: hidden;
+    position: relative;
+}
+
+p.summary:before{
+    content:"";
+    width:100%;
+    height:100%;    
+    position:absolute;
+    left:0;
+    top:0;
+    background:linear-gradient(transparent 3em, $color-theme-background-light);
+}
+
+.button {
+  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border: 1px solid $color-base-00;
+  border-radius: 0.375em;
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: 700;
+  height: 2.5em;
+  letter-spacing: 0.075em;
+  line-height: 2.5em;
+  padding: 0 2.25em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.button:hover {
+  border: 1px solid $color-base-00;
+  color: $color-base-00; 
+  background-color: $color-theme-background-dark;
+}
+
+.button:active {
+  border: 1px solid $color-base-00;
+  color: $color-base-00; 
+  background-color: $color-theme-background-dark;
+}
+
+body {
+  color: $color-base-00;
+  background-color: $color-theme-background-dark;
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.4;
+  margin-top: 2.75em;
+
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  background-color: $color-theme-background-light;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color-orange;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+  -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  border-bottom: dotted 1px $color-base-01;
+  color: $color-base-01;
+  text-decoration: none;
+}
+
+a:before {
+  -moz-transition: color 0.2s ease;
+  -webkit-transition: color 0.2s ease;
+  -ms-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: transparent;
+  color: $color-blue;
+}
+
+a:hover:before {
+  color: $color-blue;
+}
+
+pre.chroma {
+}
+
+code {
+  background-color: $color-theme-background-dark;
+  border-radius: 5px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+}
+
+p code {
+  display: inline-block;
+  padding: 0 0.5em 0 0.5em;
+}
+
+pre code {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+
+.wrapper-center {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
+
+.wrapper-content {
+  padding: 0 20px 20px 20px;
+}
+
+.centered-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+#site-header {
+  background-color: $color-theme-background-dark;
+  border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  height: 2.75em;
+  justify-content: space-between;
+  line-height: 2.75em;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 10000;
+}
+
+#site-header h1 {
+  font-size: 1em;
+  margin: 0;
+  padding-left: 1em;
+}
+
+#site-header h1 > a {
+  border-bottom: 0;
+}
+
+#site-header a:hover {
+  color: $color-orange;
+}
+
+#site-header ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+#site-header ul li {
+  display: inline-block;
+  padding-left: 0;
+}
+
+#site-header .links {
+  -moz-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border-left: solid 1px rgba(160, 160, 160, 0.3);
+  height: inherit;
+  line-height: inherit;
+  margin-left: 1.5em;
+  overflow: hidden;
+  padding-left: 1.5em;
+}
+
+#site-header .links ul li {
+  border-left: solid 1px rgba(160, 160, 160, 0.3);
+  line-height: 1;
+  margin-left: 1em;
+  padding-left: 1em;
+}
+
+#site-header .links ul li:first-child {
+  border-left: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#site-header .links ul li a {
+  border-bottom: 0;
+  font-size: 0.8em;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+#site-header .main ul {
+  height: inherit;
+  line-height: inherit;
+}
+
+#site-header .main ul li {
+  border-left: solid 1px rgba(160, 160, 160, 0.3);
+  height: inherit;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+#site-header .main ul li > * {
+  display: block;
+  float: left;
+}
+
+#site-header .main ul li > a {
+  text-decoration: none;
+  border-bottom: 0;
+  overflow: hidden;
+  position: relative;
+  text-indent: 1em;
+  width: 3em;
+}
+
+#site-header .main ul li > a:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+
+#site-header .main ul li > a:before {
+  display: block;
+  height: inherit;
+  left: 0;
+  line-height: inherit;
+  position: absolute;
+  text-align: center;
+  text-indent: 0;
+  top: 0;
+  width: inherit;
+}
+
+#copyright {
+  font-size: 0.75em;
+  text-align: center;
+}

@@ -1,0 +1,12 @@
+name = "Solarized"
+license = "MIT"
+licenselink = "https://github.com/chmking/hugo-solarized/blob/master/LICENSE"
+description = "Hugo blog theme based on the Solarized color scheme"
+homepage = "https://chris.coyfox.net/themes/hugo-solarized/"
+tags = []
+features = []
+min_version = "0.41"
+
+[author]
+  name = "Christopher King"
+  homepage = "https://chris.coyfox.net"

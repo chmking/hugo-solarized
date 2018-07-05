@@ -1,0 +1,20 @@
+<header id="site-header">
+  <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title | upper }}</a></h1>
+  <nav class="links">
+    <ul>
+      {{ $currentPage := . }}
+      {{ range .Site.Sections }}
+      <li>
+        <a href="{{ .URL }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
+  <nav class="main">
+    <ul>
+      <li class="menu">
+        <a href="#menu"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+  </nav>
+</header>

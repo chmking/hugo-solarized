@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+<div class="wrapper-center">
+  <div class="wrapper-content">
+    {{ range .Paginator.Pages }}
+    {{ partial "summary.html" . }}
+    {{ end }}
+    {{ template "_internal/pagination.html" . }}
+  </div>
+</div>
+
+{{ end }}

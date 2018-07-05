@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+<div class="wrapper-center">
+  <div class="wrapper-content">
+    <section id="recent-posts">
+      <h2>Recent Posts</h2>
+      <div class="flex-row">
+      {{ range (first 2 (where .Site.Pages "Section" "post")) }}
+      {{ partial "summary.html" . }}
+      {{ end }}
+      </div>
+    </section>
+  </div>
+</div>
+
+{{ end }}
