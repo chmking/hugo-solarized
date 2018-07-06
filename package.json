@@ -1,0 +1,30 @@
+{
+  "name": "hugo-solarized",
+  "version": "1.0.0",
+  "description": "Solarized is a Hugo theme inspired by a color scheme of the same name.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chmking/hugo-solarized.git"
+  },
+  "keywords": [
+    "hugo",
+    "theme",
+    "solarized"
+  ],
+  "author": "Christopher King",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chmking/hugo-solarized/issues"
+  },
+  "homepage": "https://github.com/chmking/hugo-solarized#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.6.5",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1"
+  }
+}
