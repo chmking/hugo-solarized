@@ -1,16 +1,16 @@
-@import 'partials/normalize'; 
+@import 'partials/normalize';
 
-$color-base-3:  rgb(253, 247, 231); // Lightest
-$color-base-2:  rgb(240, 235, 218);
-$color-base-1:  rgb(157, 171, 171); // Lightest Grey
-$color-base-0:  rgb(142, 158, 160);
+$color-base-3: rgb(253, 247, 231); // Lightest
+$color-base-2: rgb(240, 235, 218);
+$color-base-1: rgb(157, 171, 171); // Lightest Grey
+$color-base-0: rgb(142, 158, 160);
 $color-base-00: rgb(112, 134, 142);
-$color-base-01: rgb( 99, 121, 128); // Darkest Grey
-$color-base-02: rgb(  3,  62,  75);
-$color-base-03: rgb(  0,  49,  62); // Darkest
+$color-base-01: rgb(99, 121, 128); // Darkest Grey
+$color-base-02: rgb(3, 62, 75);
+$color-base-03: rgb(0, 49, 62); // Darkest
 
-$color-blue:   rgb( 43, 115, 216);
-$color-orange: rgb(209,  85,  22);
+$color-blue: rgb(43, 115, 216);
+$color-orange: rgb(209, 85, 22);
 
 $color-theme-background-light: $color-base-3;
 $color-theme-background-dark: $color-base-2;
@@ -18,37 +18,39 @@ $color-theme-background-dark: $color-base-2;
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 .flex-row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .flex-row-item {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 1;
-    position: relative;
-    width: 100%; 
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  position: relative;
+  width: 100%;
 }
 
 p.summary {
-    max-height: 6em;
-    overflow-y: hidden;
-    position: relative;
+  max-height: 6em;
+  overflow-y: hidden;
+  position: relative;
 }
 
-p.summary:before{
-    content:"";
-    width:100%;
-    height:100%;    
-    position:absolute;
-    left:0;
-    top:0;
-    background:linear-gradient(transparent 3em, $color-theme-background-light);
+p.summary:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(transparent 3em, $color-theme-background-light);
 }
 
 .button {
@@ -73,13 +75,13 @@ p.summary:before{
 
 .button:hover {
   border: 1px solid $color-base-00;
-  color: $color-base-00; 
+  color: $color-base-00;
   background-color: $color-theme-background-dark;
 }
 
 .button:active {
   border: 1px solid $color-base-00;
-  color: $color-base-00; 
+  color: $color-base-00;
   background-color: $color-theme-background-dark;
 }
 
@@ -99,12 +101,17 @@ main {
   background-color: $color-theme-background-light;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: $color-orange;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 a {

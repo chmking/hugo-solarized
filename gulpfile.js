@@ -1,17 +1,18 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
+const {src, dest, watch} = require('gulp');
+const sass = require('gulp-sass');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
 
-gulp.task('styles', function() {
-    gulp.src('./src/sass/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(postcss([autoprefixer()]))
-        .pipe(gulp.dest('./theme/static/css/'))
-});
+function styles(cb) {
+  return src('./src/sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(dest('./theme/static/css/'));
 
-gulp.task('watch',function() {
-    gulp.watch('./src/sass/**/*.scss',['styles']);
-});
+  cb();
+}
 
-gulp.task('default', ['watch']);
+exports.default = function() {
+  styles();
+  watch('./src/sass/**/*.scss', styles);
+};
